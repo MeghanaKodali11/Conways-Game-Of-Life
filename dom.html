@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Game of Life | DOM</title>
+  <title>Game of Life </title>
   <link rel="stylesheet" href="style.css">
   <style type="text/css">
     #board {
@@ -36,9 +36,8 @@
       background-color: #fff;
     }
 
-.dropbtn {
-
-    -webkit-appearance: none;
+  select{
+   -webkit-appearance: none;
   box-sizing: border-box;
   background: linear-gradient(to bottom, #fff 5%, #f6f6f6 100%);
   background-color: #fff;
@@ -54,40 +53,32 @@
   font: bold 12px Arial;
   text-shadow: 0px 1px 0px #ffffff;
 }
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
+option{
+   -webkit-appearance: none;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, #fff 5%, #f6f6f6 100%);
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+  box-shadow: inset 0px 1px 0px 0px #fff;
+  margin: 5px 2px;
+  padding: 4px 18px;
+  vertical-align: middle;
+  height: 30px; 
+  cursor: pointer;
+  color: #555;
+  font: bold 12px Arial;
+  text-shadow: 0px 1px 0px #ffffff;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 90px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
 </style>
 </head>
 <body>
-  <h1>Conway’s Game of Life</h1>
+  <h1>Conway’s Game of Life
+  <a href="./LoginForm.php"><img src="logout.png" align="right" style="width:50px; height=50px;"/></a> </h1>
   
   <p class="buttons">
     <button id="play" autofocus>Stop</button>
@@ -95,52 +86,33 @@
 	<button id="23next">23 Steps</button>
     <button id="new">New Board</button>
     <button id="clear">Clear Board</button>
+	<button id="still">Still life</button>
     <input id="speed" type="range" min="0" max="100" value="70" step="1">
-	<div class="dropdown">
+	 <!--<div class="dropdown"> 
   <button onclick="myFunction()" class="dropbtn">Grid size</button>
   
-  <div id="myDropdown" class="dropdown-content">
-	<button id="5025" onclick="changeSize(50,25);" >50 x 25</button>
-    <button id="5050" onclick="changeSize(50,50);">50 x 50</button>
-    <button id="7575" onclick="changeSize(75,75);">75 x 75</button>
-	<option value="1">test1</option>
-  <option value="2" selected="selected">test2</option>
-  <option value="3">test3</option>
-  </div>
-</div>
-<script>
-function changeSize(var1,var2)
-{  
-var gridWidth= var1;
-var gridHeight = var2;
-}
-</script>
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+ <div id="myDropdown" class="dropdown-content">
+	<button id="5025" onclick="changeSize(50,25);">50 x 25</button>
+    <button id="5050" onclick="changeSize(50,50);">40 x 40</button>
+	</div>
+	
+</div>-->
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
+     <select id="dropdownSel">
+	    
+		<option value="25" selected>Grid size:25 x 25</option>
+		<option value="35" >Grid size:35 x 35</option>
+		<option value="40">Grid size:40 x 40</option>
+	</select>
+
+
 
 
 
   </p>
-  <div id="board"></div>
+  <div id="board">
+  
+  </div>
   <div class="info">
     <div class="inner">
       <h2>Rules</h2>
@@ -156,6 +128,6 @@ window.onclick = function(event) {
   </div>
  
   <!-- DOM implementation -->
-  <script src="game-of-life-dom.js"></script>  
+  <script src="dom.js"></script>  
 </body>
 </html>
