@@ -21,6 +21,12 @@ username VARCHAR(30),
 password VARCHAR(30) 
 )";
 
+$sql1 = "CREATE TABLE players (
+firstname VARCHAR(30),
+lastname VARCHAR(30),
+time VARCHAR(30),
+score VARCHAR(30) 
+)";
 
 if ($conn->query($sql1) === TRUE) {
     echo "login_id Table is created successfully";
