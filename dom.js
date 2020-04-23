@@ -103,13 +103,186 @@ function updateBoard() {
   });
 }
 
-/*Still life implementation*/
-function still_life()
-{
+/* Gosper Glider Gun */
+function gosperGliderGun() {
+
+
+  grid = grid.map(function() {
+    return false;
+  });
+  updateBoard();
+  stop = true;
+  playBtn.textContent = "Play";
+  newBtn.focus();
+  
+  //var ranNum = randomNumber(1,gridWidth-1);
+    
+    if(gridWidth == 50){
+		// square
+    grid[452] = true;
+    grid[453] = true;
+    grid[502] = true;
+    grid[503] = true;
+	
+	//Pattern 2
+	grid[364] = true;
+    grid[365] = true;
+    grid[413] = true;
+    grid[462] = true;
+	grid[512] = true;
+    grid[562] = true;
+    grid[613] = true;
+    grid[664] = true;
+	
+	//Pattern 3
+	grid[665] = true;
+    grid[516] = true;
+    grid[417] = true;
+    grid[617] = true;
+	
+	//Pattern 4
+	grid[468] = true;
+    grid[518] = true;
+    grid[568] = true;
+    grid[519] = true;
+	grid[372] = true;
+    grid[373] = true;
+	
+	//Pattern 5
+	grid[422] = true;
+    grid[423] = true;
+    grid[472] = true;
+    grid[473] = true;
+	grid[324] = true;
+	
+	//Pattern 6
+	grid[524] = true;
+    grid[276] = true;
+    grid[326] = true;
+    grid[526] = true;
+	grid[576] = true;
+    grid[386] = true;
+    grid[387] = true;
+	
+	//Pattern 7
+	grid[436] = true;
+    grid[437] = true;
+   
+	}
+	updateBoard();
 	
 	
 }
 
+/* Oscillators */
+function oscillators() {
+
+
+  grid = grid.map(function() {
+    return false;
+  });
+  updateBoard();
+  stop = true;
+  playBtn.textContent = "Play";
+  newBtn.focus();
+    
+    if(gridWidth == 35){
+	
+    grid[216] = true;
+    grid[217] = true;
+	grid[218] = true;
+    grid[189] = true;
+    grid[190] = true;
+	
+	grid[224] = true;
+    grid[262] = true;
+    grid[296] = true;
+    grid[297] = true;
+	grid[271] = true;
+    grid[272] = true;
+    grid[273] = true;
+    grid[305] = true;
+	
+	grid[306] = true;
+    grid[307] = true;
+    grid[537] = true;
+    grid[543] = true;
+	
+	grid[572] = true;
+    grid[578] = true;
+    grid[607] = true;
+	
+	grid[608] = true;
+    grid[612] = true;
+    grid[613] = true;
+    grid[673] = true;
+	
+	//Pattern 2
+	grid[674] = true;
+    grid[675] = true;
+    grid[678] = true;
+    grid[679] = true;
+	grid[681] = true;
+    grid[682] = true;
+    grid[685] = true;
+    grid[686] = true;
+	
+	//Pattern 3
+	grid[687] = true;
+    grid[710] = true;
+    grid[712] = true;
+    grid[714] = true;
+	
+	//Pattern 4
+	grid[716] = true;
+    grid[718] = true;
+    grid[720] = true;
+    grid[747] = true;
+	grid[748] = true;
+    grid[752] = true;
+	
+	//Pattern 5
+	grid[753] = true;
+    grid[817] = true;
+    grid[818] = true;
+    grid[822] = true;
+	grid[823] = true;
+	
+	//Pattern 6
+	grid[850] = true;
+    grid[852] = true;
+    grid[854] = true;
+    grid[856] = true;
+	grid[858] = true;
+    grid[860] = true;
+    grid[883] = true;
+	
+	//Pattern 7
+	grid[884] = true;
+    grid[885] = true;
+    grid[888] = true;
+	grid[889] = true;
+    grid[891] = true;
+    grid[892] = true;
+	grid[895] = true;
+    grid[896] = true;
+	grid[897] = true;
+    grid[957] = true;
+    grid[958] = true;
+	
+	//Pattern 7
+	grid[962] = true;
+    grid[963] = true;
+    grid[992] = true;
+    grid[998] = true;
+	grid[1027] = true;
+    grid[1033] = true;
+ 
+   }
+	updateBoard();
+	
+	
+}
 
 
 /* Still life */
@@ -124,7 +297,96 @@ function stillLife() {
   playBtn.textContent = "Play";
   newBtn.focus();
   
-  still_life();
+    if(gridWidth == 35){
+		// square
+    grid[285] = true;
+    grid[286] = true;
+    grid[320] = true;
+    grid[321] = true;
+	
+	//Pattern 2
+	grid[257] = true;
+    grid[258] = true;
+    grid[291] = true;
+    grid[294] = true;
+	grid[326] = true;
+    grid[329] = true;
+    grid[362] = true;
+    grid[363] = true;
+	
+	//Pattern 3
+	grid[264] = true;
+    grid[298] = true;
+    grid[300] = true;
+    grid[334] = true;
+	
+	//Pattern 4
+	grid[495] = true;
+    grid[529] = true;
+    grid[531] = true;
+    grid[564] = true;
+	grid[566] = true;
+    grid[600] = true;
+	
+	//Pattern 5
+	grid[506] = true;
+    grid[507] = true;
+    grid[541] = true;
+    grid[543] = true;
+	grid[577] = true;
+	
+	//Pattern 6
+	grid[511] = true;
+    grid[512] = true;
+    grid[546] = true;
+    grid[548] = true;
+	grid[582] = true;
+    grid[584] = true;
+    grid[618] = true;
+	
+	//Pattern 7
+	grid[739] = true;
+    grid[740] = true;
+    grid[742] = true;
+    grid[743] = true;
+	grid[775] = true;
+    grid[777] = true;
+    grid[810] = true;
+	grid[812] = true;
+    grid[844] = true;
+	grid[845] = true;
+    grid[847] = true;
+    grid[848] = true;
+	
+	//Pattern 7
+	grid[750] = true;
+    grid[751] = true;
+    grid[785] = true;
+    grid[788] = true;
+	grid[822] = true;
+    grid[823] = true;
+	
+	//Pattern 8
+	grid[794] = true;
+    grid[795] = true;
+    grid[797] = true;
+    grid[829] = true;
+	grid[831] = true;
+    grid[832] = true;
+	
+	//Pattern 8
+	grid[517] = true;
+    grid[518] = true;
+    grid[552] = true;
+    grid[554] = true;
+	grid[588] = true;
+    grid[590] = true;
+	grid[624] = true;
+    grid[626] = true;
+    grid[660] = true;
+    
+    }
+  
 
   
   updateBoard();
@@ -209,6 +471,14 @@ $("clear").addEventListener("click", function() {
 /* Still Life Button */
 var stillBtn = $("still");
 stillBtn.addEventListener("click", stillLife);
+
+/*Gosper Glider Button */
+var stillBtn = $("gosper");
+stillBtn.addEventListener("click", gosperGliderGun);
+
+/*Gosper Glider Button */
+var stillBtn = $("oscillators");
+stillBtn.addEventListener("click", oscillators);
 
 /* Speed control, min - 2 fps, max - 20 fps */
 var slider = $("speed");
