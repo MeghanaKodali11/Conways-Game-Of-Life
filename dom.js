@@ -1,16 +1,19 @@
 var e = document.getElementById("dropdownSel");
 var gridWidth = e.options[e.selectedIndex].value;
-var gridHeight = e.options[e.selectedIndex].value;
+var gridHeight = e.options[e.selectedIndex].value/ 2;
 
+var Count =0;
+var pop=0;
 
 var select = document.querySelector('#dropdownSel');
 select.addEventListener('change',function(){
 	
 	var e = document.getElementById("dropdownSel");
  gridWidth = e.options[e.selectedIndex].value;
- gridHeight = e.options[e.selectedIndex].value;
+ gridHeight = e.options[e.selectedIndex].value/2;
 
 document.getElementById("board").innerHTML="";
+
 
 
  directions = [{x:0,y:-1}, {x:1,y:-1}, {x:1,y:0}, {x: 1,y:1}, {x:0,y:1}, {x:-1,y:1}, {x:-1,y:0}, {x:-1,y:-1}];
@@ -117,58 +120,95 @@ function gosperGliderGun() {
   
   //var ranNum = randomNumber(1,gridWidth-1);
     
-    if(gridWidth == 50){
+    if(gridWidth == 60){
 		// square
-    grid[452] = true;
-    grid[453] = true;
-    grid[502] = true;
-    grid[503] = true;
+    grid[484] = true;
+    grid[485] = true;
+	grid[544] = true;
+	grid[545] = true;
+	grid[376] = true;
+	grid[377] = true;
+	grid[435] = true;
+	grid[439] = true;
+	grid[494] = true;
+	grid[500] = true;
+	grid[554] = true;
+	grid[558] = true;
+	grid[560] = true;
+	grid[561] = true;
+	grid[614] = true;
+	grid[620] = true;
+	grid[675] = true;
+	grid[679] = true;
+	grid[736] = true;
+	grid[737] = true;
+	grid[268] = true;
+	grid[326] = true;
+	grid[328] = true;
+	grid[384] = true;
+	grid[385] = true;
+	grid[444] = true;
+	grid[445] = true;
+	grid[504] = true;
+	grid[505] = true;
+	grid[566] = true;
+	grid[568] = true;
+	grid[628] = true;
+	grid[398] = true;
+	grid[399] = true;
+	grid[458] = true;
+	grid[459] = true;
+
 	
-	//Pattern 2
-	grid[364] = true;
-    grid[365] = true;
-    grid[413] = true;
-    grid[462] = true;
-	grid[512] = true;
-    grid[562] = true;
-    grid[613] = true;
-    grid[664] = true;
-	
-	//Pattern 3
-	grid[665] = true;
-    grid[516] = true;
-    grid[417] = true;
-    grid[617] = true;
-	
-	//Pattern 4
-	grid[468] = true;
-    grid[518] = true;
-    grid[568] = true;
-    grid[519] = true;
-	grid[372] = true;
-    grid[373] = true;
-	
-	//Pattern 5
-	grid[422] = true;
-    grid[423] = true;
-    grid[472] = true;
-    grid[473] = true;
-	grid[324] = true;
-	
-	//Pattern 6
-	grid[524] = true;
-    grid[276] = true;
-    grid[326] = true;
-    grid[526] = true;
-	grid[576] = true;
-    grid[386] = true;
-    grid[387] = true;
-	
-	//Pattern 7
-	grid[436] = true;
-    grid[437] = true;
    
 	}
+	if(gridWidth == 50){
+		// square
+    grid[302] = true;
+    grid[303] = true;
+	grid[352] = true;
+	grid[353] = true;
+	grid[214] = true;
+	grid[215] = true;
+	grid[263] = true;
+	grid[267] = true;
+	grid[312] = true;
+	grid[318] = true;
+	grid[362] = true;
+	grid[366] = true;
+	grid[368] = true;
+	grid[369] = true;
+	grid[412] = true;
+	grid[418] = true;
+	grid[463] = true;
+	grid[467] = true;
+	grid[514] = true;
+	grid[515] = true;
+	grid[126] = true;
+	grid[174] = true;
+	grid[176] = true;
+	grid[222] = true;
+	grid[223] = true;
+	grid[272] = true;
+	grid[273] = true;
+	grid[322] = true;
+	grid[323] = true;
+	grid[374] = true;
+	grid[376] = true;
+	grid[426] = true;
+	grid[236] = true;
+	grid[237] = true;
+	grid[286] = true;
+	grid[287] = true;
+
+	
+   
+	}
+	 Count = 0;
+  pop=0;
+  document.getElementById("population").innerHTML="Live Cells : " + pop;
+  document.getElementById("counter").innerHTML="Generation count : " + pop;
+  
 	updateBoard();
 	
 	
@@ -186,99 +226,161 @@ function oscillators() {
   playBtn.textContent = "Play";
   newBtn.focus();
     
-    if(gridWidth == 35){
+    if(gridWidth == 50){
 	
-    grid[216] = true;
-    grid[217] = true;
-	grid[218] = true;
-    grid[189] = true;
-    grid[190] = true;
-	
-	grid[224] = true;
-    grid[262] = true;
-    grid[296] = true;
-    grid[297] = true;
-	grid[271] = true;
-    grid[272] = true;
-    grid[273] = true;
-    grid[305] = true;
-	
-	grid[306] = true;
-    grid[307] = true;
-    grid[537] = true;
-    grid[543] = true;
-	
-	grid[572] = true;
-    grid[578] = true;
-    grid[607] = true;
-	
-	grid[608] = true;
-    grid[612] = true;
-    grid[613] = true;
-    grid[673] = true;
-	
-	//Pattern 2
-	grid[674] = true;
-    grid[675] = true;
-    grid[678] = true;
-    grid[679] = true;
-	grid[681] = true;
-    grid[682] = true;
-    grid[685] = true;
-    grid[686] = true;
-	
-	//Pattern 3
+    grid[453] = true;
+    grid[454] = true;
+	grid[455] = true;
+	grid[410] = true;
+	grid[411] = true;
+	grid[460] = true;
+	grid[513] = true;
+	grid[562] = true;
+	grid[563] = true;
+	grid[519] = true;
+	grid[520] = true;
+	grid[521] = true;
+	grid[568] = true;
+	grid[569] = true;
+	grid[570] = true;
+	grid[282] = true;
+	grid[288] = true;
+	grid[332] = true;
+	grid[338] = true;
+	grid[382] = true;
+	grid[383] = true;
+	grid[387] = true;
+	grid[388] = true;
+	grid[478] = true;
+	grid[479] = true;
+	grid[480] = true;
+	grid[483] = true;
+	grid[484] = true;
+	grid[486] = true;
+	grid[487] = true;
+	grid[490] = true;
+	grid[491] = true;
+	grid[492] = true;
+	grid[530] = true;
+	grid[532] = true;
+	grid[534] = true;
+	grid[536] = true;
+	grid[538] = true;
+	grid[540] = true;
+	grid[582] = true;
+	grid[583] = true;
+	grid[587] = true;
+	grid[588] = true;
+	grid[682] = true;
+	grid[683] = true;
 	grid[687] = true;
-    grid[710] = true;
-    grid[712] = true;
-    grid[714] = true;
+	grid[688] = true;
+	grid[730] = true;
+	grid[732] = true;
+	grid[734] = true;
+    grid[736] = true;
+    grid[738] = true;
+ 	grid[740] = true;
+ 	grid[778] = true;
+ 	grid[779] = true;
+ 	grid[780] = true;
+ 	grid[783] = true;
+ 	grid[784] = true;
+ 	grid[786] = true;
+ 	grid[787] = true;
+ 	grid[790] = true;
+ 	grid[791] = true;
+ 	grid[792] = true; 
+	grid[882] = true;
+	grid[883] = true;
+	grid[887] = true;
+ 	grid[888] = true;
+	grid[932] = true;
+	grid[938] = true;
+	grid[982] = true;
+	grid[988] = true;
+   
+}
+   if(gridWidth == 60){
 	
-	//Pattern 4
-	grid[716] = true;
-    grid[718] = true;
-    grid[720] = true;
-    grid[747] = true;
-	grid[748] = true;
-    grid[752] = true;
-	
-	//Pattern 5
+    grid[543] = true;
+    grid[544] = true;
+	grid[545] = true;
+	grid[490] = true;
+	grid[491] = true;
+	grid[550] = true;
+	grid[613] = true;
+	grid[672] = true;
+	grid[673] = true;
+	grid[618] = true;
+	grid[619] = true;
+	grid[620] = true;
+	grid[677] = true;
+	grid[678] = true;
+	grid[679] = true;
+	grid[392] = true;
+	grid[398] = true;
+	grid[452] = true;
+	grid[398] = true;
+	grid[458] = true;
+	grid[512] = true;
+	grid[513] = true;
+	grid[517] = true;
+	grid[518] = true;
+	grid[628] = true;
+	grid[629] = true;
+	grid[630] = true;
+	grid[633] = true;
+	grid[634] = true;
+	grid[636] = true;
+	grid[637] = true;
+	grid[640] = true;
+	grid[641] = true;
+	grid[642] = true;
+	grid[690] = true;
+	grid[692] = true;
+	grid[694] = true;
+	grid[696] = true;
+	grid[698] = true;
+	grid[700] = true;
+	grid[752] = true;
 	grid[753] = true;
-    grid[817] = true;
-    grid[818] = true;
-    grid[822] = true;
-	grid[823] = true;
-	
-	//Pattern 6
-	grid[850] = true;
-    grid[852] = true;
-    grid[854] = true;
-    grid[856] = true;
-	grid[858] = true;
-    grid[860] = true;
-    grid[883] = true;
-	
-	//Pattern 7
-	grid[884] = true;
-    grid[885] = true;
-    grid[888] = true;
-	grid[889] = true;
-    grid[891] = true;
-    grid[892] = true;
-	grid[895] = true;
-    grid[896] = true;
-	grid[897] = true;
-    grid[957] = true;
-    grid[958] = true;
-	
-	//Pattern 7
-	grid[962] = true;
-    grid[963] = true;
-    grid[992] = true;
-    grid[998] = true;
-	grid[1027] = true;
-    grid[1033] = true;
+	grid[757] = true;
+	grid[758] = true;
+	grid[872] = true;
+	grid[873] = true;
+	grid[877] = true;
+	grid[878] = true;
+	grid[930] = true;
+	grid[932] = true;
+	grid[934] = true;
+	grid[936] = true;
+	grid[938] = true;
+	grid[940] = true;
+	grid[988] = true;
+	grid[989] = true;
+	grid[990] = true;
+	grid[993] = true;
+	grid[994] = true;
+	grid[996] = true;
+	grid[997] = true;
+	grid[1000] = true;
+	grid[1001] = true;
+	grid[1002] = true;
+	grid[1112] = true;
+	grid[1113] = true;
+	grid[1117] = true;
+	grid[1118] = true;
+	grid[1172] = true;
+	grid[1178] = true;
+	grid[1232] = true;
+	grid[1238] = true;
  
    }
+    Count = 0;
+  pop=0;
+  document.getElementById("population").innerHTML="Live Cells : " + pop;
+  document.getElementById("counter").innerHTML="Generation count : " + pop;
 	updateBoard();
 	
 	
@@ -288,116 +390,155 @@ function oscillators() {
 /* Still life */
 function stillLife() {
 
-
   grid = grid.map(function() {
     return false;
   });
   updateBoard();
   stop = true;
+  
   playBtn.textContent = "Play";
   newBtn.focus();
   
-    if(gridWidth == 35){
+    if(gridWidth == 60){
 		// square
-    grid[285] = true;
-    grid[286] = true;
-    grid[320] = true;
-    grid[321] = true;
-	
-	//Pattern 2
-	grid[257] = true;
-    grid[258] = true;
-    grid[291] = true;
-    grid[294] = true;
-	grid[326] = true;
-    grid[329] = true;
-    grid[362] = true;
-    grid[363] = true;
-	
-	//Pattern 3
-	grid[264] = true;
-    grid[298] = true;
-    grid[300] = true;
-    grid[334] = true;
-	
-	//Pattern 4
-	grid[495] = true;
-    grid[529] = true;
-    grid[531] = true;
-    grid[564] = true;
-	grid[566] = true;
-    grid[600] = true;
-	
-	//Pattern 5
-	grid[506] = true;
-    grid[507] = true;
-    grid[541] = true;
-    grid[543] = true;
-	grid[577] = true;
-	
-	//Pattern 6
-	grid[511] = true;
-    grid[512] = true;
-    grid[546] = true;
-    grid[548] = true;
+    grid[430] = true;
+    grid[431] = true;
+    grid[437] = true;
+    grid[442] = true;
+	grid[443] = true;
+	grid[447] = true;
+	grid[448] = true;
+	grid[454] = true;
+	grid[455] = true;
+	grid[461] = true;
+	grid[462] = true;
+	grid[473] = true;
+	grid[474] = true;
+	grid[484] = true;
+	grid[485] = true;
+	grid[489] = true;
+	grid[492] = true;
+	grid[496] = true;
+	grid[498] = true;
+	grid[502] = true;
+	grid[504] = true;
+	grid[507] = true;
+	grid[509] = true;
+	grid[513] = true;
+	grid[516] = true;
+	grid[520] = true;
+	grid[523] = true;
+	grid[527] = true;
+	grid[528] = true;
+	grid[530] = true;
+	grid[533] = true;
+	grid[536] = true;
+	grid[544] = true;
+	grid[545] = true;
+	grid[549] = true;
+	grid[552] = true;
+	grid[557] = true;
+	grid[563] = true;
+	grid[568] = true;
+	grid[570] = true;
+	grid[574] = true;
+	grid[576] = true;
+	grid[581] = true;
 	grid[582] = true;
-    grid[584] = true;
-    grid[618] = true;
-	
-	//Pattern 7
-	grid[739] = true;
-    grid[740] = true;
-    grid[742] = true;
-    grid[743] = true;
-	grid[775] = true;
-    grid[777] = true;
-    grid[810] = true;
-	grid[812] = true;
-    grid[844] = true;
-	grid[845] = true;
-    grid[847] = true;
-    grid[848] = true;
-	
-	//Pattern 7
-	grid[750] = true;
-    grid[751] = true;
-    grid[785] = true;
-    grid[788] = true;
-	grid[822] = true;
-    grid[823] = true;
-	
-	//Pattern 8
-	grid[794] = true;
-    grid[795] = true;
-    grid[797] = true;
-    grid[829] = true;
-	grid[831] = true;
-    grid[832] = true;
-	
-	//Pattern 8
-	grid[517] = true;
-    grid[518] = true;
-    grid[552] = true;
-    grid[554] = true;
-	grid[588] = true;
-    grid[590] = true;
-	grid[624] = true;
-    grid[626] = true;
-    grid[660] = true;
+	grid[587] = true;
+	grid[589] = true;
+	grid[590] = true;
+	grid[595] = true;
+	grid[596] = true;
+	grid[610] = true;
+	grid[611] = true;
+	grid[629] = true;
+	grid[635] = true;
+    
     
     }
-  
-
-  
+  if(gridWidth == 50){
+		// square
+    grid[305] = true;
+    grid[306] = true;
+    grid[310] = true;
+    grid[311] = true;
+	grid[317] = true;
+	grid[321] = true;
+	grid[322] = true;
+	grid[326] = true;
+	grid[327] = true;
+	grid[333] = true;
+	grid[334] = true;
+	grid[338] = true;
+	grid[339] = true;
+	grid[341] = true;
+	grid[344] = true;
+	grid[345] = true;
+	grid[355] = true;
+	grid[356] = true;
+	grid[359] = true;
+	grid[362] = true;
+	grid[366] = true;
+	grid[368] = true;
+	grid[371] = true;
+	grid[373] = true;
+	grid[376] = true;
+	grid[378] = true;
+	grid[382] = true;
+	grid[385] = true;
+	grid[388] = true;
+	grid[390] = true;
+	grid[391] = true;
+	grid[394] = true;
+	grid[397] = true;
+	grid[409] = true;
+	grid[412] = true;
+	grid[417] = true;
+	grid[422] = true;
+	grid[427] = true;
+	grid[429] = true;
+	grid[433] = true;
+	grid[435] = true;
+	grid[446] = true;
+	grid[447] = true;
+	grid[460] = true;
+	grid[461] = true;
+	grid[478] = true;
+	grid[484] = true;
+	
+    
+    
+    }
+Count = 0;
+ 
+  document.getElementById("counter").innerHTML="Generation count : " + Count;	
+  pop=0;
+  document.getElementById("population").innerHTML="Live Cells : " + pop;
   updateBoard();
 }
 
 
+function population()
+{
+	var pop=0;
+	var i;
+	for(i=0;i<size;i++)
+		{
+			if(grid[i] == true)
+			pop = pop + 1;
+		}	
+		document.getElementById("population").innerHTML="Live Cells : " + pop;	
+}
+
 /* Single step */
 function step() {
-
+   population();
+   
   grid = nextGeneration();
+  Count = Count + 1;
   
+  document.getElementById("counter").innerHTML="Generation count : " + Count;
   updateBoard();
 }
 
@@ -407,13 +548,18 @@ function step2() {
 	for (y=0;y<23;y++)
 	{
   grid = nextGeneration();
+  Count = Count + 1;
+  document.getElementById("counter").innerHTML="Generation count : " + Count;
 	}
+	
+	  
   updateBoard();
 }
 
 /* Loop and Timer */
 var speed = 100;
 var stop = false;
+
 function loop() {
   step();
   if (!stop) {
@@ -439,6 +585,7 @@ playBtn.addEventListener("click", function() {
   }
   this.textContent = "Play";
   stop = true;
+  
 });
 
 /* Next Button */
@@ -455,6 +602,10 @@ newBtn.addEventListener("click", function() {
   grid = makeGrid();
   updateBoard();
   nextBtn.focus();
+  Count = 0;
+  pop=0;
+  document.getElementById("population").innerHTML="Live Cells : " + pop;
+  document.getElementById("counter").innerHTML="Generation count : " + pop;	
 });
 
 /* Clear Button */
@@ -463,9 +614,14 @@ $("clear").addEventListener("click", function() {
     return false;
   });
   updateBoard();
+  	
   stop = true;
   playBtn.textContent = "Play";
   newBtn.focus();
+  Count = 0;
+  pop=0;
+  document.getElementById("population").innerHTML="Live Cells : " + pop;
+  document.getElementById("counter").innerHTML="Generation count : " + pop;	
 });
 
 /* Still Life Button */
@@ -476,7 +632,7 @@ stillBtn.addEventListener("click", stillLife);
 var stillBtn = $("gosper");
 stillBtn.addEventListener("click", gosperGliderGun);
 
-/*Gosper Glider Button */
+/*Oscillator Button */
 var stillBtn = $("oscillators");
 stillBtn.addEventListener("click", oscillators);
 
