@@ -1,0 +1,73 @@
+body {
+  background-image: url("../back2.jpg");
+   background-image: no-repeat;
+   background-size:1700px 800px;
+  color: #fff;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+#header {
+      float: left;
+      padding-top: 5px;
+      padding-bottom: 5px;
+        font: 52px Impact, sans-serif;
+  text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.3);
+  text-align: right;
+    }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;
+}
+#table1 {
+  border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px 0px;
+}
+tr {
+  color: black;
+}
+tr:nth-child(even){background-color: #f2f2f2;}
+tr:nth-child(odd){background-color: #ffffff;}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+button,
+input[type=range] {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, #fff 5%, #f6f6f6 100%);
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+  box-shadow: inset 0px 1px 0px 0px #fff;
+  margin: 3px 3px;
+  padding: 6px 16px;
+  vertical-align: middle;
+  height: 30px; 
+}
+
+button {
+  cursor: pointer;
+  color: #555;
+  font: bold 12px Arial;
+  text-shadow: 0px 1px 0px #ffffff;
+}
+
+button:hover {
+  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+  background-color: #f6f6f6;
+}
+
+button:active {
+  position: relative;
+  top: 1px;
+}
