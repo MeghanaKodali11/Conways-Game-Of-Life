@@ -95,6 +95,8 @@ table
 th, td {
 text-align:center;
     color: white;
+    padding-right: 15px;
+    margin-right: 5px;
 
 }
 
