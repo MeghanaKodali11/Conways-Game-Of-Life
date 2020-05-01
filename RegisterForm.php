@@ -20,6 +20,10 @@ input[type=text],input[type=password]{
 
 
 <?php
+session_start();
+if(isset($_SESSION['login_user'])){
+header("location: dom.php");
+}
 
 function test_input($data) 
 {
@@ -36,13 +40,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 $fname= test_input($_POST["fname"]);
 $lname= test_input($_POST["lname"]);
 $uid= test_input($_POST["uid"]);
-$pwd= test_input($_POST["pwd"]);
+$pwd_nohash= test_input($_POST["pwd"]);
+$error='';
 
+$uppercase = preg_match('@[A-Z]@', $pwd_nohash);
+$lowercase = preg_match('@[a-z]@', $pwd_nohash);
+$number    = preg_match('@[0-9]@', $pwd_nohash);
+
+if(!$uppercase || !$lowercase || !$number || strlen($pwd_nohash) < 8) {
+	   $error = 'Password must conatin least 8 characters, one capital letter, one number & one special character.';
+	} else {
+$pwd=password_hash($pwd_nohash, PASSWORD_DEFAULT);
 
 $servername = "localhost";
-$username = "mkodali1";
-$password = "mkodali1";
-$dbname = "mkodali1";
+$username = "pkalipindi1";
+$password = "pkalipindi1";
+$dbname = "pkalipindi1";
 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -51,20 +64,29 @@ if ($conn->connect_error)
 {
    echo "<script type='text/javascript'>alert('Server Connection is failed')</script>"; 
 } 
+$Check_sql = "SELECT firstname from login_ids where username=$uid";
+
+if ($conn->query($Check_sql) === TRUE) 
+{ $error = "Username already exists";
+}
+else{
 
 $sql = "INSERT INTO login_ids (firstname, lastname, username, password)
 VALUES ('".$fname."','".$lname."','".$uid."', '".$pwd."')";
 
+
 if ($conn->query($sql) === TRUE) 
 {
     echo "<script type='text/javascript'>alert('Registration Successfull!')</script>"; 
+    header("Location: LoginForm.php");
 }
 else 
 {
     echo "<script type='text/javascript'>alert('Connection Failed: '". $conn->error.")</script>"; ;
 }
-
+}
 $conn->close();
+}
 }
 ?>
 
@@ -97,12 +119,18 @@ $conn->close();
 				<td><input type="password" name="pwd" placeholder="Your Password.." required></td>
 			</tr>
 			<tr>
+				<td colspan="2">
+				<span style="font-size: 10px;"><?php echo $error; ?></span></td>
+			</tr>
+			<br>
+			<tr>
 				<td> </td>
 				<td><input type="submit" value="Register" class="myButton" ></td>
 			</tr>
 			<tr>
 				<td> </td>
 				<td>
+					
 				<a href="LoginForm.php" class="myButton" >Login</a>
 				
 				</td>
