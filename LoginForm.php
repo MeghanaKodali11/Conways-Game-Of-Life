@@ -13,12 +13,17 @@ input[type=text],input[type=password]{
   box-sizing: border-box;
 }</style>
 </head>
-<body background="banner.jpg">
+<body background="back.jpg" style="margin-top:0px">
 
-<h1 style="margin-top:-400px;" >LOGIN TO PLAY GAME</h1>
-<a href="#Login" > <img src="down.png" style="margin-top:10px;" alt=""/> </a>
+<!-- <h1 style="margin-top:10px;" >LOGIN TO PLAY GAME</h1> -->
+<!-- <a href="#Login" > <img src="down.png" style="margin-top:10px;" alt=""/> </a> -->
 
 <?php
+
+session_start();
+if(isset($_SESSION['login_user'])){
+header("location: dom.php");
+}
 
 function test_input($data) {
   $data = trim($data);
@@ -34,9 +39,9 @@ $uid= test_input($_POST["uid"]);
 $pwd= test_input($_POST["pwd"]);
 
 $servername = "localhost";
-$username = "mkodali1";
-$password = "mkodali1";
-$dbname = "mkodali1";
+$username = "pkalipindi1";
+$password = "pkalipindi1";
+$dbname = "pkalipindi1";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -56,11 +61,16 @@ if ($result->num_rows > 0)
 		
 		if($row["username"] == $uid)
 		{
-			if($row["password"] == $pwd)
+			if(password_verify($pwd, $row["password"]))
 			{
-					
-					header("Location:dom.html");
-					
+					$_SESSION['login_user']=$uid;
+					$_SESSION['New_user']=0;
+					if($uid=="Admin"){
+						header("Location:Admin/index.php");
+					}
+					else {
+					header("Location:dom.php");
+					}
 			}
 			else
 			{
@@ -82,10 +92,10 @@ $conn->close();
 
 ?>
 
-<div id="black">
+<div>
 
 
-<img src="head.png" height="150" width="400" style="margin-top:300px;"  alt=""/>
+<img src="head.png" height="150" width="400"   alt=""/>
    <a name= "Login"></a> <h2>User Login Form</h2>
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 		<br><br>
