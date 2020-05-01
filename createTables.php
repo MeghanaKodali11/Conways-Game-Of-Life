@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "mkodali1";
-$password = "mkodali1";
-$dbname = "mkodali1";
+$username = "pkalipindi1";
+$password = "pkalipindi1";
+$dbname = "pkalipindi1";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -18,18 +18,27 @@ $sql1 = "CREATE TABLE login_ids (
 firstname VARCHAR(30),
 lastname VARCHAR(30),
 username VARCHAR(30),
-password VARCHAR(30) 
+password VARCHAR(100)
 )";
 
-$sql1 = "CREATE TABLE players (
-firstname VARCHAR(30),
-lastname VARCHAR(30),
-time VARCHAR(30),
-score VARCHAR(30) 
+$sql = "CREATE TABLE players (
+id int NOT NULL AUTO_INCREMENT,
+username VARCHAR(30),
+/*firstname VARCHAR(30),
+lastname VARCHAR(30),*/
+d_t VARCHAR(30),
+generation VARCHAR(30),
+population VARCHAR(30),
+PRIMARY KEY (id)
 )";
 
 if ($conn->query($sql1) === TRUE) {
     echo "login_id Table is created successfully";
+} else {
+    echo "Table Creation Error " . $conn->error;
+}
+if ($conn->query($sql) === TRUE) {
+    echo "players Table is created successfully";
 } else {
     echo "Table Creation Error " . $conn->error;
 }
