@@ -29,7 +29,12 @@ loop();
 
 //var gridWidth = 50;
 //var gridHeight=25;
-
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
 function makeBoard(width, height) {
   var nodes = [];
   var size = width * height;
@@ -208,6 +213,8 @@ function gosperGliderGun() {
   pop=0;
   document.getElementById("population").innerHTML="Live Cells : " + pop;
   document.getElementById("counter").innerHTML="Generation count : " + pop;
+  setCookie("generation",pop,1);
+setCookie("population",pop,1);
   
 	updateBoard();
 	
@@ -381,6 +388,8 @@ function oscillators() {
   pop=0;
   document.getElementById("population").innerHTML="Live Cells : " + pop;
   document.getElementById("counter").innerHTML="Generation count : " + pop;
+  setCookie("generation",pop,1);
+setCookie("population",pop,1);
 	updateBoard();
 	
 	
@@ -515,6 +524,8 @@ Count = 0;
   document.getElementById("counter").innerHTML="Generation count : " + Count;	
   pop=0;
   document.getElementById("population").innerHTML="Live Cells : " + pop;
+   setCookie("generation",Count,1);
+setCookie("population",pop,1);
   updateBoard();
 }
 
@@ -528,7 +539,8 @@ function population()
 			if(grid[i] == true)
 			pop = pop + 1;
 		}	
-		document.getElementById("population").innerHTML="Live Cells : " + pop;	
+		document.getElementById("population").innerHTML="Live Cells : " + pop;
+		setCookie("population",pop,1);
 }
 
 /* Single step */
@@ -539,6 +551,7 @@ function step() {
   Count = Count + 1;
   
   document.getElementById("counter").innerHTML="Generation count : " + Count;
+  setCookie("generation",Count,1);
   updateBoard();
 }
 
@@ -550,6 +563,7 @@ function step2() {
   grid = nextGeneration();
   Count = Count + 1;
   document.getElementById("counter").innerHTML="Generation count : " + Count;
+  setCookie("generation",Count,1);
 	}
 	
 	  
@@ -606,6 +620,8 @@ newBtn.addEventListener("click", function() {
   pop=0;
   document.getElementById("population").innerHTML="Live Cells : " + pop;
   document.getElementById("counter").innerHTML="Generation count : " + pop;	
+  setCookie("generation",pop,1);
+setCookie("population",pop,1);
 });
 
 /* Clear Button */
@@ -621,7 +637,9 @@ $("clear").addEventListener("click", function() {
   Count = 0;
   pop=0;
   document.getElementById("population").innerHTML="Live Cells : " + pop;
-  document.getElementById("counter").innerHTML="Generation count : " + pop;	
+  document.getElementById("counter").innerHTML="Generation count : " + pop;
+  setCookie("generation",pop,1);
+setCookie("population",pop,1);	
 });
 
 /* Still Life Button */
