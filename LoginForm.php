@@ -112,6 +112,14 @@ $conn->close();
 				<td style="font-family: cursive; font-weight: bold">Password :</td>
 				<td><input type="password" name="pwd" placeholder="Your Password.." required></td>
 			</tr>
+
+			<tr>
+				<td colspan="2">
+				<span style="font-size: 11px;">For <b> Admin Portal</b> use <i>Username:</i><b> Admin</b> , <i>Password:</i> <b>Admin</b>  </span></td>
+			</tr><tr>
+				<td colspan="2">
+				<span style="font-size: 12px;">For <b> Guest user</b> use <i>Username:</i><b> guest</b> , <i>Password:</i> <b>guest</b> </span></td>
+			</tr>
 			<tr>
 				<td> </td>
 				<td><input type="submit" value="Login" class="myButton"></td>
